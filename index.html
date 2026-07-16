@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zarafishan Ashiq | Explainable AI for Financial Fraud Detection</title>
+<meta name="description" content="Zarafishan Ashiq — research portfolio in Explainable AI, fraud detection, and intelligent financial systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14201F;
+    --paper:#EEF2F1;
+    --panel:#FFFFFF;
+    --line:#CBD5D2;
+    --teal:#1F6F63;
+    --teal-deep:#123F38;
+    --flag:#C97A2B;
+    --flag-tint:#F7E7D4;
+    --muted:#5B6B68;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Zilla Slab',serif;
+    color:var(--ink);
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:var(--teal-deep);}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* Nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(238,242,241,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;}
+  nav .brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:18px;}
+  nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;flex-wrap:wrap;}
+  nav a{text-decoration:none;color:var(--muted);font-size:14px;font-family:'IBM Plex Mono',monospace;}
+  nav a:hover{color:var(--teal-deep);}
+
+  /* Hero */
+  header.hero{padding:72px 0 56px;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;
+    color:var(--teal-deep);text-transform:uppercase;margin-bottom:18px;display:block;
+  }
+  h1.name{font-size:44px;font-weight:700;line-height:1.1;}
+  .role{font-size:19px;color:var(--muted);margin-top:10px;max-width:640px;}
+  .contact-row{margin-top:26px;display:flex;flex-wrap:wrap;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .contact-row a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
+
+  /* Ledger structure */
+  .ledger{position:relative;padding-left:38px;}
+  .ledger::before{
+    content:"";position:absolute;left:9px;top:6px;bottom:0;width:1px;background:var(--line);
+  }
+  section{padding:52px 0;border-bottom:1px solid var(--line);position:relative;}
+  section:last-of-type{border-bottom:none;}
+  .node{
+    position:absolute;left:-38px;top:56px;width:19px;height:19px;border-radius:50%;
+    background:var(--panel);border:1px solid var(--teal);
+  }
+  .node.flag{background:var(--flag);border-color:var(--flag);}
+  .sec-index{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--teal-deep);display:block;margin-bottom:6px;}
+  h2.sec-title{font-size:26px;font-weight:600;margin-bottom:20px;}
+
+  p{color:var(--ink);margin:0 0 14px;}
+  .lede{font-size:17px;color:var(--muted);max-width:680px;}
+
+  /* Flagged entry (signature) */
+  .flagged-entry{
+    position:relative;background:var(--flag-tint);border:1px solid var(--flag);
+    padding:22px 24px 22px 44px;margin-top:22px;
+  }
+  .flagged-entry::before{
+    content:"FLAGGED — RESEARCH FOCUS";
+    position:absolute;left:-1px;top:14px;
+    background:var(--flag);color:#fff;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.05em;padding:3px 10px 3px 12px;
+    clip-path:polygon(0 0,100% 0,92% 50%,100% 100%,0 100%);
+  }
+  .flagged-entry h3{font-size:19px;margin-bottom:8px;margin-top:6px;}
+  .flagged-entry p{color:var(--ink);margin-bottom:0;}
+
+  /* Interests tags */
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:var(--panel);
+    border:1px solid var(--line);color:var(--teal-deep);padding:5px 11px;
+  }
+
+  /* Entry rows (projects / experience) */
+  .entry{padding:18px 0;border-top:1px dashed var(--line);}
+  .entry:first-of-type{border-top:none;padding-top:0;}
+  .entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
+  .entry-head h3{font-size:17px;font-weight:600;}
+  .entry-date{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);white-space:nowrap;}
+  .entry-org{font-size:14px;color:var(--muted);margin-top:2px;}
+  .entry ul{margin:10px 0 0;padding-left:18px;}
+  .entry li{margin-bottom:6px;font-size:15px;}
+
+  /* Skills grid */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:8px;}
+  .skill-card{background:var(--panel);border:1px solid var(--line);padding:16px 18px;}
+  .skill-card h4{margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--teal-deep);letter-spacing:.04em;text-transform:uppercase;}
+  .skill-card p{margin:0;font-size:14.5px;color:var(--ink);}
+
+  /* Contact */
+  footer{padding:48px 0 60px;}
+  .contact-card{background:var(--panel);border:1px solid var(--line);padding:28px;}
+  .contact-card a{font-family:'IBM Plex Mono',monospace;font-size:14px;}
+  .foot-note{margin-top:30px;font-size:13px;color:var(--muted);}
+
+  @media (max-width:640px){
+    h1.name{font-size:32px;}
+    .ledger{padding-left:26px;}
+    .node{left:-26px;width:15px;height:15px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Z. Ashiq</span>
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Ledger — Applicant Record</span>
+    <h1 class="name">Zarafishan Ashiq</h1>
+    <p class="role">Prospective research candidate building an Explainable AI framework for fraud detection in digital financial transaction systems.</p>
+    <div class="contact-row">
+      <a href="mailto:zarafishankhan545@gmail.com">zarafishankhan545@gmail.com</a>
+      <a href="https://linkedin.com/in/zarafishan-ashiq" target="_blank" rel="noopener">linkedin.com/in/zarafishan-ashiq</a>
+      <span>Rawalpindi, Pakistan</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="ledger">
+
+  <section id="profile">
+    <span class="node"></span>
+    <span class="sec-index">§ 01</span>
+    <h2 class="sec-title">Profile</h2>
+    <p class="lede">Computer Science graduate with professional experience in systems analysis, business analysis, enterprise software, healthcare information systems, and banking technology. Background in requirements engineering, SQL, and applied machine learning through MS coursework research, with hands-on experience in NLP, transformer models, and large-scale public dataset analysis.</p>
+    <div class="tags">
+      <span class="tag">Explainable AI</span>
+      <span class="tag">Fraud Detection</span>
+      <span class="tag">FinTech</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">Deep Learning</span>
+      <span class="tag">NLP</span>
+      <span class="tag">Intelligent Information Systems</span>
+      <span class="tag">Data Analytics</span>
+    </div>
+  </section>
+
+  <section id="research">
+    <span class="node flag"></span>
+    <span class="sec-index">§ 02</span>
+    <h2 class="sec-title">Research direction</h2>
+    <p class="lede">MS Computer Science, Abasyn University (2024) · BS Software Engineering, University of Poonch, Rawalakot (2017).</p>
+    <div class="flagged-entry">
+      <h3>An Explainable Artificial Intelligence Framework for Fraud Detection in Digital Financial Transaction Systems</h3>
+      <p>Proposed research topic for a Masters/PhD by research in Australia. Aims to combine interpretable machine learning methods with fraud-detection models for digital financial transactions, addressing the trust and transparency gap in automated financial decision systems.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <span class="node"></span>
+    <span class="sec-index">§ 03</span>
+    <h2 class="sec-title">Research projects — MS coursework</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Analyzing COVID-19-Related Hate Speech Using BERT Attention</h3>
+        <span class="entry-date mono">NLP · BERT</span>
+      </div>
+      <ul>
+        <li>Fine-tuned a BERT transformer model to detect hate speech in tweets targeting the Asian community and older adults during COVID-19.</li>
+        <li>Applied attention-weight analysis to surface hate-associated keywords; built the preprocessing pipeline (tokenization, stemming, stop-word removal, TF-IDF) in Python/NLTK.</li>
+        <li>Identified 186 novel anti-Asian and 100 age-based hate keywords, benchmarked against CNN/LSTM baselines from prior literature.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Global Suicide Rate Analysis</h3>
+        <span class="entry-date mono">Data Analysis</span>
+      </div>
+      <ul>
+        <li>Consolidated a combined dataset (UN Development Program, World Bank, WHO, Kaggle) of 27,820 records across 10 features.</li>
+        <li>Studied demographic and socioeconomic patterns (country, year, sex, age group, GDP per capita) in global suicide rates from 1985–2015.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Energy Demand Forecasting using Machine Learning</h3>
+        <span class="entry-date mono">Time-Series</span>
+      </div>
+      <ul>
+        <li>Built Python-based predictive models for energy demand forecasting using time-series and regression techniques.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Enterprise Systems Analysis and Process Optimisation</h3>
+        <span class="entry-date mono">Systems Analysis</span>
+      </div>
+      <ul>
+        <li>Applied systems-analysis methods to optimise workflows across healthcare and financial information systems.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <span class="node"></span>
+    <span class="sec-index">§ 04</span>
+    <h2 class="sec-title">Professional experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Senior System Analyst — AKSA SDS</h3>
+        <span class="entry-date mono">2024 — Present</span>
+      </div>
+      <ul>
+        <li>Requirements engineering and SDS/FSDS documentation for enterprise financial software.</li>
+        <li>Stakeholder engagement via Confluence, Azure DevOps, and Redmine.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Business Analyst — Kulsum International Hospital</h3>
+        <span class="entry-date mono">2023 — 2024</span>
+      </div>
+      <ul><li>SQL-based analytics, technical documentation, workflow improvement, user training.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Business Analyst — Shifa International Hospital</h3>
+        <span class="entry-date mono">2022 — 2023</span>
+      </div>
+      <ul><li>Project documentation, risk monitoring, stakeholder workshops.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Billing Project Associate — Nobility</h3>
+        <span class="entry-date mono">2022</span>
+      </div>
+      <ul><li>Practice management software, claims and payment processing.</li></ul>
+    </div>
+  </section>
+
+  <section id="conferences">
+    <span class="node"></span>
+    <span class="sec-index">§ 05</span>
+    <h2 class="sec-title">Conferences &amp; professional development</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Health Asia International Exhibition &amp; Conference 2025 — Certified Masterclass on e-Pharma &amp; Digital Health</h3>
+        <span class="entry-date mono">24 Oct 2025</span>
+      </div>
+      <p class="entry-org">Karachi Expo Centre, Pakistan · Role: Participant</p>
+      <ul><li>Attended technical sessions on Artificial Intelligence, Digital Health, Virtual Reality, e-Pharma, and healthcare digital transformation.</li></ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <span class="node"></span>
+    <span class="sec-index">§ 06</span>
+    <h2 class="sec-title">Technical skills &amp; certifications</h2>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h4>Programming &amp; Analytics</h4>
+        <p>Python, SQL, Oracle, R Studio, NLTK</p>
+      </div>
+      <div class="skill-card">
+        <h4>Machine Learning / Deep Learning</h4>
+        <p>BERT, CNN/LSTM concepts, TF-IDF, scikit-learn</p>
+      </div>
+      <div class="skill-card">
+        <h4>Delivery &amp; Collaboration Tools</h4>
+        <p>JIRA, Confluence, Azure DevOps, Redmine, Git</p>
+      </div>
+      <div class="skill-card">
+        <h4>Certifications</h4>
+        <p>AWS Solution Architect, Microsoft Office Specialist, Microsoft Visio</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <span class="node"></span>
+    <span class="sec-index">§ 07</span>
+    <h2 class="sec-title">Contact</h2>
+    <div class="contact-card">
+      <p style="margin-bottom:14px;color:var(--muted)">Open to scholarship review, research supervision matching, and academic collaboration in Explainable AI and financial fraud detection.</p>
+      <a href="mailto:zarafishankhan545@gmail.com">zarafishankhan545@gmail.com</a><br>
+      <a href="https://linkedin.com/in/zarafishan-ashiq" target="_blank" rel="noopener">linkedin.com/in/zarafishan-ashiq</a>
+    </div>
+    <p class="foot-note">References available on request.</p>
+  </section>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-note">© Zarafishan Ashiq. Research portfolio — Explainable AI for financial fraud detection.</p>
+  </div>
+</footer>
+
+</body>
+</html>
