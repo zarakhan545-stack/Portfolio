@@ -74,4 +74,4 @@ Outputs are written to `outputs/results.json` and `outputs/dataset_metadata.json
 - [Literature review plan](docs/literature_review_plan.md)
 - [Implementation guide and bundle](IMPLEMENTATION.md)
 - [Deterministic decision protocol](src/decision_protocol.py)
-- [Full pipeline](src/pipeline.py)
+- Full training/evaluation pipeline and test suite: included in [implementation bundle](implementation_bundle.tar.gz)
