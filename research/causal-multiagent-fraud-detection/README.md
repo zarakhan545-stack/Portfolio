@@ -26,7 +26,7 @@ Primary benchmark: [ULB/Worldline credit-card fraud dataset](https://www.kaggle.
 
 ## Run locally or in Google Colab
 
-Python 3.11 is recommended.
+Python 3.11 is recommended. The full source-code package, tests, dependency list and workflow template are inside [implementation_bundle.tar.gz](implementation_bundle.tar.gz). Download and extract it into this project directory first; the archive creates the `src/`, `tests/`, `requirements.txt` and related folders.
 
 ```bash
 python -m pip install -r requirements.txt
@@ -56,7 +56,7 @@ Outputs are written to `outputs/results.json` and `outputs/dataset_metadata.json
 
 - [x] Research question, mathematical decision protocol and experimental design
 - [x] Reproducible model-training and evaluation implementation
-- [x] Unit tests and GitHub Actions workflow
+- [x] Unit tests and a GitHub Actions workflow template (included in the implementation bundle)
 - [x] Dataset instructions and checksum/metadata capture for local CSV
 - [x] Baselines, simulated reviewer evaluation and sensitivity analysis code
 - [ ] Execute full pipeline on the real ULB/Worldline dataset
